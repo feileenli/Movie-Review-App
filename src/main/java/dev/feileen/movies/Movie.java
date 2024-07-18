@@ -5,6 +5,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +20,7 @@ public class Movie {
     @Id
     private ObjectId id; 
 
-    private String imdbID; 
+    private String imdbId; 
     private String title; 
     private String releaseDate;
     private String trailerLink;
@@ -26,6 +28,6 @@ public class Movie {
     private List<String> genres;
     private List<String> backdrops; 
     
-    @DBRef
+    @DocumentReference
     private List<Review> reviewIDs;
 }
