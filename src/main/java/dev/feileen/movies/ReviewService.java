@@ -1,5 +1,7 @@
 package dev.feileen.movies;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -27,4 +29,11 @@ public class ReviewService {
             //.first makes sure you're getting a single movie and updating that movie 
         return review;
     }
+
+    public List<Review> allReviews() {
+        return reviewRepository.findAll();
+    }
+        
+    
+
 }
